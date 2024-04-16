@@ -3,7 +3,7 @@
 #include "pico/stdlib.h"
 #include "pico/cyw43_arch.h"
 #include "lwipopts.h"
-#include "cgi.h"
+#include "cgi.c"
 #include "localconf.h"
 int main() {
     stdio_init_all();

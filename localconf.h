@@ -1,2 +1,2 @@
-#define WIFI_SSID "podaj ssid swojej sieci"
-#define WIFI_PASS "podaj haslo swojej sieci bbb"
+#define WIFI_SSID "Jak masz na imie"
+#define WIFI_PASS "pierdolsiefilip"
