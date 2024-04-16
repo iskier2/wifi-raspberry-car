@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Joystick</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+</head>
+<style>
+    body {
+        margin-top: 100px;
+    }
+
+    input#speed {
+        writing-mode: vertical-lr;
+        -webkit-appearance: none;
+        appearance: none;
+        background: white;
+        cursor: pointer;
+        height: 10rem;
+        border: 2px;
+        border-color: black;
+        border-style: solid;
+        border-radius: 10px;
+    }
+
+    input#left_right {
+        -webkit-appearance: none;
+        appearance: none;
+        background: white;
+        cursor: pointer;
+        width: 15rem;
+        border: 2px;
+        border-color: black;
+        border-style: solid;
+        border-radius: 10px;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        align-items: center;
+    }
+
+    .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .flex-center {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .flex-column {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .checkbox-size {
+        width: 30px;
+        height: 30px;
+    }
+</style>
+
+<body>
+    <div class="grid-container">
+        <div class="grid-item flex-column"><input type="range" id="left_right" name="Skret" min="0" max="10"
+                value="5" />
+            <label for="left_right">Skręt</label>
+        </div>
+        <div class="grid-item"><input type="checkbox" id="lights" name="Swiatla" class="checkbox-size" />
+            <label for="lights">Światła</label>
+        </div>
+        <div class="grid-item flex-center"><input type="range" id="speed" name="Predkosc" min="0" max="100" value="0"
+                step="1" />
+            <label for="speed">Prędkość</label>
+        </div>
+    </div>
+</body>
+
+</html>
