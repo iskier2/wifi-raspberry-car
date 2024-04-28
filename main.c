@@ -16,6 +16,6 @@ int main() {
     httpd_init();
     cgi_init();
     while(1){
-        printf("XD");
+        printf("%X\n", cyw43_state.netif[0].ip_addr.addr );
     };
 }
