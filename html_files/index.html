@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,32 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="/led.cgi?led=1"><button>LED ON</button></a>
-    <a href="/led.cgi?led=0"><button>LED OFF</button></a>
+    <button type="button" onclick="changeSpeed()">LED ON</button>
+    <button type="button" onclick="changeDirection()">LED OFF</button>
+    <script>
+        function changeSpeed() {
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              console.log(this.responseText);
+            }
+          };
+          xhttp.open("GET", "led.cgi?led=1", true);
+          xhttp.send();
+        }
+        
+        function changeDirection() {
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              console.log(this.responseText);
+            }
+          };
+          xhttp.open("GET", "led.cgi?led=0", true);
+          xhttp.send();
+        }
+    </script>
 </body>
 </html>
+
+
