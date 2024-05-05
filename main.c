@@ -50,6 +50,6 @@ int main() {
     cgi_init();
     while(1){
         tight_loop_contents();
-        // printf("%X\n", cyw43_state.netif[0].ip_addr.addr );
+        printf("%X\n", cyw43_state.netif[0].ip_addr.addr );
     };
 }
