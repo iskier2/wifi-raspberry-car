@@ -5,8 +5,11 @@
 const char * cgi_speed_handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[])
 {
     int speed = atoi(pcValue[0]);
-    pwm_set_chan_level(en_a_pwm, PWM_CHAN_A, abs(speed) * 5);
-    pwm_set_chan_level(en_b_pwm, PWM_CHAN_A, abs(speed) * 5);
+    int direction = atoi(pcValue[1]);
+    printf("%i, %i, %i\n", speed, direction, abs(speed) * ((direction < 0) ? (100 + direction) : 100)/20);
+    pwm_set_chan_level(en_a_pwm, PWM_CHAN_A, abs(speed) * ((direction < 0) ? (100 + direction) : 100)/20);
+    pwm_set_chan_level(en_b_pwm, PWM_CHAN_A, abs(speed) * ((direction > 0) ? (100 - direction) : 100)/20);
+    
     gpio_put(INPUT_1, (speed > 0));
     gpio_put(INPUT_2, (speed < 0));
     gpio_put(INPUT_3, (speed > 0));
