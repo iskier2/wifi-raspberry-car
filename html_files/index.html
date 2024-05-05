@@ -11,7 +11,7 @@
     }
 
     input#speed {
-        writing-mode: vertical-lr;
+        writing-mode: vertical-rl;
         -webkit-appearance: none;
         appearance: none;
         background: white;
@@ -68,8 +68,8 @@
 
 <body>
     <div class="grid-container">
-        <div class="grid-item flex-column"><input type="range" id="direction" name="Skret" min="100" max="-100"
-                value="0" step="-1" onchange="changeSpeed()" />
+        <div class="grid-item flex-column"><input type="range" id="direction" name="Skret" min="-100" max="100"
+                value="0" step="1" onchange="changeSpeed()" />
             <label for="left_right">Skręt</label>
         </div>
         <div class="grid-item"><input type="checkbox" id="lights" name="Swiatla" class="checkbox-size" />
@@ -88,7 +88,7 @@
               console.log(this.responseText);
             }
           };
-          xhttp.open("GET", "speed?speed="+document.getElementById("speed").value + "&direction="+document.getElementById("direction").value, true);
+          xhttp.open("GET", "speed?speed="+(-document.getElementById("speed").value) + "&direction="+document.getElementById("direction").value, true);
           xhttp.send();
         }
 
