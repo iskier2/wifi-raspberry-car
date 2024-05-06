@@ -1,18 +1,20 @@
 
 body {
 	margin-top: 100px;
-	background-color: DeepSkyBlue;
+	background-color: greenyellow;
+	
 }
 
 input#speed {
+	
 	writing-mode: vertical-lr;
 	-webkit-appearance: none;
 	appearance: none;
-	background: white;
-	cursor: pointer;
+	background: orange;
+	cursor: pointer ;
 	height: 10rem;
 	border: 2px;
-	border-color: black;
+	border-color: orangered;
 	border-style: solid;
 	border-radius: 10px;
 }
@@ -20,11 +22,11 @@ input#speed {
 input#left_right {
 	-webkit-appearance: none;
 	appearance: none;
-	background: white;
+	background: orange;
 	cursor: pointer;
 	width: 15rem;
 	border: 2px;
-	border-color: black;
+	border-color: orangered;
 	border-style: solid;
 	border-radius: 10px;
 }
@@ -36,7 +38,7 @@ input#left_right {
 }
 
 .grid-item {
-	background-color: rgba(255, 255, 255, 0.8);
+	/*background-color: yellowgreen;*/
 	font-size: 30px;
 	text-align: center;
 }
