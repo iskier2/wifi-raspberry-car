@@ -17,6 +17,7 @@ input#speed {
 	border-color: orangered;
 	border-style: solid;
 	border-radius: 10px;
+	
 }
 
 input#left_right {
@@ -41,6 +42,7 @@ input#left_right {
 	/*background-color: yellowgreen;*/
 	font-size: 30px;
 	text-align: center;
+	color: orangered;
 }
 
 .flex-center {
