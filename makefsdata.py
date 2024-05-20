@@ -1,16 +1,15 @@
 #!/usr/bin/python3
 
-# This script is by @rspeir on GitHub: 
-# https://github.com/krzmaz/pico-w-webserver-example/pull/1/files/4b3e78351dd236f213da9bebbb20df690d470476#diff-e675c4a367e382db6f9ba61833a58c62029d8c71c3156a9f238b612b69de279d
-# Renamed output to avoid linking incorrect file
+example/pull/1/files/4b3e78351dd236f213da9bebbb20df690d470476#diff-e675c4a367e382db6f9ba61833a58c62029d8c71c3156a9f238b612b69de279d
+
 
 import os
 import binascii
 
-#Create file to write output into
+
 output = open('htmldata.c', 'w') 
 
-#Traverse directory, generate list of files
+
 files = list()
 os.chdir('./html_files')
 for(dirpath, dirnames, filenames) in os.walk('.'):
@@ -19,7 +18,7 @@ for(dirpath, dirnames, filenames) in os.walk('.'):
 filenames = list()
 varnames  = list()
 
-#Generate appropriate HTTP headers
+
 for file in files:
 
     if '404' in file:
@@ -77,7 +76,7 @@ for file in files:
             count = 0
     output.write("\n\t")
 
-    #finally, dump raw hex data from files
+
     with open(file, 'rb') as f:
         count = 0
         while(byte := f.read(1)):

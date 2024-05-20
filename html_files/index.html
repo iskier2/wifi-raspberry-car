@@ -1,13 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="pl">
+
     <link rel="stylesheet" href="colors.css"type="text/css"/>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Joystick</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 </head>
+<style>
+    body {
+        margin-top: 100px;
+    }
+
+    input#speed {
+
+        writing-mode: vertical-lr;
+
+        -webkit-appearance: none;
+        appearance: none;
+        background: white;
+        cursor: pointer;
+        height: 10rem;
+        border: 2px;
+        border-color: black;
+        border-style: solid;
+        border-radius: 10px;
+    }
+
+    input#left_right {
+        -webkit-appearance: none;
+        appearance: none;
+        background: white;
+        cursor: pointer;
+        width: 15rem;
+        border: 2px;
+        border-color: black;
+        border-style: solid;
+        border-radius: 10px;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        align-items: center;
+    }
+
+    .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .flex-center {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .flex-column {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .checkbox-size {
+        width: 30px;
+        height: 30px;
+    }
+</style>
+
 <body>
-    <a href="/led.cgi?led=1"><button>LED ON</button></a>
-    <a href="/led.cgi?led=0"><button>LED OFF</button></a>
+    <div class="grid-container">
+
+        <div class="grid-item flex-column"><input type="range" id="direction" name="Skret" min="-100" max="100"
+                value="0" step="1" onchange="changeSpeed()" />
+
+            <label for="left_right">Skręt</label>
+        </div>
+        <div class="grid-item"><input type="checkbox" id="lights" name="Swiatla" class="checkbox-size" />
+            <label for="lights" onchange="changeLights()">Światła</label>
+        </div>
+        <div class="grid-item flex-center"><input type="range" id="speed" name="Predkosc" min="-100" max="100" value="0"
+                step="1" onchange="changeSpeed()"/>
+            <label for="speed">Prędkość</label>
+        </div>
+    </div>
+    <script>
+        function changeSpeed() {
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              console.log(this.responseText);
+            }
+          };
+
+          xhttp.open("GET", "speed?speed="+(-document.getElementById("speed").value) + "&direction="+document.getElementById("direction").value, true);
+
+          xhttp.send();
+        }
+
+        function changeLights() {
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              console.log(this.responseText);
+            }
+          };
+          xhttp.open("GET", "led.cgi?led="+document.getElementById("lights").value, true);
+          xhttp.send();
+        }
+    </script>
 </body>
+
 </html>
