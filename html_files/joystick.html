@@ -5,7 +5,72 @@
     <title>Joystick</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 </head>
+<style>
+    body {
+	margin-top: 100px;
+	background-color: greenyellow;
+	
+	
+}
 
+input#speed {
+	
+	writing-mode: vertical-lr;
+	-webkit-appearance: none;
+	appearance: none;
+	background: orange;
+	cursor: pointer ;
+	height: 10rem;
+	border: 2px;
+	border-color: orangered;
+	border-style: solid;
+	border-radius: 10px;
+	
+}
+
+input#left_right {
+	-webkit-appearance: none;
+	appearance: none;
+	background: orange;
+	cursor: pointer;
+	width: 15rem;
+	border: 2px;
+	border-color: orangered;
+	border-style: solid;
+	border-radius: 10px;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	align-items: center;
+}
+
+.grid-item {
+	/*background-color: yellowgreen;*/
+	font-size: 30px;
+	text-align: center;
+	color: orangered;
+}
+
+.flex-center {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+.flex-column {
+	display: flex;
+	gap: 5px;
+	align-items: center;
+	flex-direction: column;
+}
+
+.checkbox-size {
+	width: 30px;
+	height: 30px;
+}
+</style>
 
 
 <body>
